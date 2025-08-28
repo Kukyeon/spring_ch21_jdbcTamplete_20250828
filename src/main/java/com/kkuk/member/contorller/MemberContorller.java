@@ -23,7 +23,7 @@ public class MemberContorller {
 		return "join";
 	}
 	
-	@RequestMapping(value = "/joinOk")
+	@RequestMapping(value = "/joinOk") // 회원 가입 처리
 	public String joinOk(HttpServletRequest request, Model model) {
 		
 		String mid = request.getParameter("memberid");
@@ -36,7 +36,7 @@ public class MemberContorller {
 		return "redirect:memberlist";
 	}
 	
-	@RequestMapping(value = "/memberlist")
+	@RequestMapping(value = "/memberlist") // 멤버 리스트 요청
 	public String memberlist(Model model) {
 		
 		List<MemberDto> mDtos = memberDao.searchMembers();
@@ -45,12 +45,12 @@ public class MemberContorller {
 		return "memberlist";
 	}
 	
-	@RequestMapping(value = "/search")
+	@RequestMapping(value = "/search") // 회원 검색
 	public String search() {
 		return "searchMember";
 	}
 	
-	@RequestMapping(value = "/searchOk")
+	@RequestMapping(value = "/searchOk") // 회원검색요청 처리
 	public String searchOk(HttpServletRequest request, Model model) {
 		
 		MemberDto mDto = memberDao.searchMember(request.getParameter("memberid"));
