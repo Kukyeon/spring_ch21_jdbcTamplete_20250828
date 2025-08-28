@@ -30,7 +30,7 @@
 	</beans:bean>
 	
 	<!-- JDBC Template 설정  -->
-	b<beans:bean name="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+	<beans:bean name="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
 		<beans:property name="dataSource" ref="dataSource" />
 	</beans:bean>
 	
